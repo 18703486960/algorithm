@@ -2,6 +2,21 @@
 #include <stack>
 using namespace std;
 
+int selectPivotmeofthree(int* arr, int left, int right){
+    int mid = left + ((right - left) >> 1);
+
+    if(arr[mid] > arr[right]){
+        swap(arr[mid], arr[right]);
+    }
+    if(arr[left] > arr[right]){
+        swap(arr[right], arr[left]);
+    }
+    if(arr[mid] < arr[left]){
+        swap(arr[mid], arr[left]);
+    }
+    return arr[left];
+}
+
 int partition(int* arr, int left, int right){
     int temp = arr[left];
     while(left < right){
