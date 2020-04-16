@@ -72,7 +72,7 @@ public:
             attach(node);
             return node->data;
         }
-        else return NULL;
+        else return -1;
     }
 private:
     void detach(LRUCacheEntry<K,T>* node){
@@ -86,3 +86,20 @@ private:
         node->next->prev = node;
     }
 };
+
+int main(){
+    LRUCache <int, int>cache(2);
+    cache.put(1,1);
+    cache.put(2,2);
+    cout << cache.get(1) << endl;
+    cache.put(3,3);
+    cout << cache.get(2) << endl;
+
+    cache.put(4,4);
+    cout << cache.get(1) << endl;
+
+    cout << cache.get(3) << endl;
+
+    cout << cache.get(4) << endl; 
+    return 0;
+}
