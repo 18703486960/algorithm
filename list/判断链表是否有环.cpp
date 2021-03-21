@@ -2,7 +2,6 @@ struct ListNode{
 	int val;
 	LinkNode* next;
 };
-
 bool is_have_loop(ListNode* root){
 	if(root == nullptr){
 		return -1;
